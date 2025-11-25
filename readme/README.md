@@ -48,7 +48,7 @@ The **`User` class is abstract**, defining the necessary interface (`getRole()`)
 ## 📂 Program Structure
 <a id="program-structure"></a>
 
-The project consists of five separate Java files:
+The project consists of separate Java files:
 ```
  ├──src
     ├── Main.java         # Application entry point, handles login and menus 
@@ -56,6 +56,8 @@ The project consists of five separate Java files:
     ├── Buyer.java        # Concrete subclass (inherits User, views market) 
     ├── Farmer.java       # Concrete subclass (inherits User, manages product list) 
     └── CoffeeBean.java   # Model class for product listings
+ ├──readme
+    ├──README.md
 ```
 
 Data is stored in static lists within `Main.java` for simplicity, representing all users and all products available in the market (`marketProducts`).
