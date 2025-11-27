@@ -6,7 +6,7 @@
   <span style="font-size: 1.1em;font-family: Verdana, sans-serif;">Villavicencio, Aliceson O.</span>
 </p>
 
-## 📑 Overview
+## 📑 Description/Overview
 <a id="overview"></a>
 
 The **KAPE LINK System** is a command-line interface (CLI) application built in **Java**. It is designed to simulate a basic digital marketplace, facilitating the connection between local coffee **Farmers** (producers) and **Buyers** (consumers/retailers) in the Philippine coffee trade.
@@ -28,36 +28,63 @@ The project showcases core **Object-Oriented Programming (OOP)** principles usin
 ## 💻 OOP Concepts Applied
 <a id="oop"></a>
 
-The system's design is heavily reliant on the Four Pillars of OOP:
+The system's design is heavily reliant on the principles of OOP:
 
 ### 1. Inheritance
-The base class **`User` (Abstract)** is extended by the concrete classes **`Farmer`** and **`Buyer`**, allowing them to inherit common properties (name, username, password).
 
+  a. The **`Buyer`** and **`Farmer`** classes both inherit from the abstract class **`User`**, meaning they automatically receive shared fields like **`name`**, **`username`**, **`password`**, etc.
 
-### 2. Polymorphism
-The abstract method **`getRole()`** in `User` is overridden in `Farmer` (returns "Farmer") and `Buyer` (returns "Buyer"). The `Main.java` login logic uses the general `User` object reference to call the correct implementation at runtime.
+  b. Inheritance helps avoid duplicate code since all user types share common attributes and behaviors.
 
-### 3. Encapsulation
-Product fields in **`CoffeeBean.java`** are declared **`private final`** (`productName`, `price`, `quantity`, etc.), making them immutable after object creation. User login details are protected/private and accessed only via explicit public methods (`getUsername()`, `getPassword()`).
+  c. It allows specialized user types (**`Buyer`** / **`Farmer`**) to extend the base class with their own unique actions.
 
-### 4. Abstraction
-The **`User` class is abstract**, defining the necessary interface (`getRole()`) without providing its implementation. This simplifies the client code (`Main.java`), which only needs to know that a user has a role.
+### 2. Abstraction
+   
+  a. The **`User`** class is declared abstract, meaning it cannot be illustrated and serves only as a blueprint.
 
+  b. It includes the abstract method **`getRole()`**, which forces every subclass (**`Buyer`**, **`Farmer`**) to provide its own implementation.
+
+  c. This hides unnecessary details from the **`Main`** program and provides a general structure for all user types.
+
+### 3. Polymorphism
+
+  a. During login, the system treats all users as **`User`** objects, but behaves differently depending on their real type (**`Buyer`** or **`Farmer`**).
+
+  b.  The overridden method **`getRole()`** returns different values depending on which subclass is being used.
+
+  c. The instanceof checks allow the program to determine whether to show the **`Buyer menu`** or **`Farmer menu`** at runtime.
+
+### 4. Encapsulation
+
+  a. User information (**`name`**, **`username`**, **`password`**, etc.) is stored in protected fields, accessible only by the class and its subclasses.
+
+  b. Accessor methods like **`getUsername()`** and **`getPassword()`** control how sensitive data is retrieved, preventing direct manipulation.
+
+  c. Encapsulation helps protect user data and keeps the internal structure hidden from outside classes.
+
+### 5. Exception Handling
+
+  a. Error handling is implemented using input validation, preventing invalid user data from entering the system (e.g., password too short, contact not 11 digits).
+
+  b. The farmer's menu includes parsing of numbers (Integer.parseInt, Double.parseDouble), which are wrapped in controlled prompts to avoid crashes from invalid input.
+  
+  c. Conditional checks such as verifying username existence or incorrect login credentials ensure the program handles user errors gracefully.
+  
 ---
 
 ## 📂 Program Structure
 <a id="program-structure"></a>
 
-The project consists of separate Java files:
+The project consists of separate files:
 ```
  ├──src
-    ├── Main.java         # Application entry point, handles login and menus 
-    ├── User.java         # Abstract base class for all users 
-    ├── Buyer.java        # Concrete subclass (inherits User, views market) 
-    ├── Farmer.java       # Concrete subclass (inherits User, manages product list) 
-    └── CoffeeBean.java   # Model class for product listings
- ├──readme
-    ├──README.md
+    ├──Main
+      ├── Main.java         # Application entry point, handles login and menus
+    ├──models
+      ├── User.java         # Abstract base class for all users 
+      ├── Buyer.java        # Concrete subclass (inherits User, views market) 
+      ├── Farmer.java       # Concrete subclass (inherits User, manages product list) 
+      └── CoffeeBean.java   # Model class for product listings
 ```
 
 Data is stored in static lists within `Main.java` for simplicity, representing all users and all products available in the market (`marketProducts`).
