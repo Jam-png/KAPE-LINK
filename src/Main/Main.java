@@ -170,8 +170,12 @@ public class Main {
 
             switch (choice) {
                 case "1" -> {
-                    System.out.print("Product name: ");
+                    System.out.print("Farmer Name: ");
                     String name = scanner.nextLine();
+                    System.out.print("Contact Info: ");
+                    String contactInfo = scanner.nextLine();
+                    System.out.print("Product name: ");
+                    String productName = scanner.nextLine();
                     System.out.print("Type/Variety: ");
                     String variety = scanner.nextLine();
                     System.out.print("Quality: ");
@@ -183,7 +187,7 @@ public class Main {
                     System.out.print("Availability: ");
                     String availability = scanner.nextLine();
 
-                    CoffeeBean bean = new CoffeeBean(name, variety, quality, qty, price, availability);
+                    CoffeeBean bean = new CoffeeBean(name, contactInfo, productName, variety, quality, qty, price, availability);
                     farmer.addProduct(bean);
                     marketProducts.add(bean);
 
