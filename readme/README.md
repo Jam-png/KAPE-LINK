@@ -333,8 +333,8 @@ Developed as a comprehensive educational project demonstrating core OOP principl
 
 | Photo | Name | Role |
 | :---: | :--- | :--- |
-| <img src="./images/Borromeo.jpg" width="120"> | Borromeo, Jamaica L. | Team Member |
-| <img src="./images/Monterey.jpg" width="120"> | Monterey, John Zedrick D. | Team Member |
-| <img src="./images/Villavicencio.jpg" width="120"> | Villavicencio, Aliceson O. | Team Member |
+| <img src="../images/Borromeo.jpg" width="120"> | Borromeo, Jamaica L. | Team Member |
+| <img src="../images/Monterey.jpg" width="120"> | Monterey, John Zedrick D. | Team Member |
+| <img src="../images/Villavicencio.jpg" width="120"> | Villavicencio, Aliceson O. | Team Member |
 
 <p align="center">Enjoy linking with local coffee! ☕✨</p>
