@@ -331,12 +331,10 @@ Goodbye!
 
 Developed as a comprehensive educational project demonstrating core OOP principles and CLI application architecture.
 
-### Developers
-
 | Photo | Name | Role |
 | :---: | :--- | :--- |
-| *[Image Placeholder]* | Borromeo, Jamaica L. | Team Member |
-| *[Image Placeholder]* | Monterey, John Zedrick D. | Team Member |
-| *[Image Placeholder]* | Villavicencio, Aliceson O. | Team Member |
+| <img src="./images/Borromeo.jpg" width="120"> | Borromeo, Jamaica L. | Team Member |
+| <img src="./images/Monterey.jpg" width="120"> | Monterey, John Zedrick D. | Team Member |
+| <img src="./images/Villavicencio.jpg" width="120"> | Villavicencio, Aliceson O. | Team Member |
 
 <p align="center">Enjoy linking with local coffee! ☕✨</p>
