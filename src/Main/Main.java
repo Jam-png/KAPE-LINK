@@ -7,10 +7,12 @@ public class Main {
     private static final List<User> users = new ArrayList<>();
     private static final List<CoffeeBean> marketProducts = new ArrayList<>();
     private static final Scanner scanner = new Scanner(System.in);
-    private static final String USER_FILE = "users.txt"; // file to store users
+    private static final String USER_FILE = "users.txt";      // file to store users
+    private static final String PRODUCT_FILE = "products.txt"; // file to store coffee products
 
     public static void main(String[] args) {
-        loadUsersFromFile(); // load users on startup
+        loadUsersFromFile();    // Load users on startup
+        loadProductsFromFile(); // Load products on startup
 
         while (true) {
             System.out.println("\n«««000»»»ooo«««000»»»ooo«««000»»»ooo«««000»»»");
@@ -94,7 +96,7 @@ public class Main {
         }
 
         users.add(newUser);
-        saveUserToFile(newUser); // save to file for persistence
+        saveUserToFile(newUser); // Save user to file
         System.out.println("\nYasss! Registration successful! You can now login.");
     }
 
@@ -138,9 +140,7 @@ public class Main {
                         saveAllUsersToFile(); // update file after deletion
                         System.out.println("✅ Account deleted successfully.");
                         return;
-                    } else {
-                        System.out.println("Deletion canceled.");
-                    }
+                    } else System.out.println("Deletion canceled.");
                 }
                 case "3" -> {
                     System.out.println("Logging out...");
@@ -170,10 +170,9 @@ public class Main {
 
             switch (choice) {
                 case "1" -> {
-                    System.out.print("Farmer Name: ");
-                    String name = scanner.nextLine();
-                    System.out.print("Contact Info: ");
-                    String contactInfo = scanner.nextLine();
+                    System.out.println("Farmer Name: " + farmer.getName());
+                    System.out.println("Contact Info: " + farmer.getContactInfo());
+
                     System.out.print("Product name: ");
                     String productName = scanner.nextLine();
                     System.out.print("Type/Variety: ");
@@ -187,9 +186,11 @@ public class Main {
                     System.out.print("Availability: ");
                     String availability = scanner.nextLine();
 
-                    CoffeeBean bean = new CoffeeBean(name, contactInfo, productName, variety, quality, qty, price, availability);
+                    CoffeeBean bean = new CoffeeBean(farmer.getName(), farmer.getContactInfo(), productName,
+                                                     variety, quality, qty, price, availability);
                     farmer.addProduct(bean);
                     marketProducts.add(bean);
+                    saveProductToFile(bean); // Save product to file
 
                     System.out.println("\n✅ Product added!");
                 }
@@ -236,7 +237,7 @@ public class Main {
         try (FileWriter fw = new FileWriter(USER_FILE, true);
              BufferedWriter bw = new BufferedWriter(fw);
              PrintWriter out = new PrintWriter(bw)) {
-            out.println(user.getUsername() + "," + user.getPassword() + "," + user.getName() + "," + user.getRole());
+            out.println(user.getUsername() + "," + user.getPassword() + "," + user.getName() + "," + user.getRole() + "," + user.getContactInfo());
         } catch (IOException e) {
             System.out.println("Error saving user: " + e.getMessage());
         }
@@ -245,7 +246,7 @@ public class Main {
     private static void saveAllUsersToFile() {
         try (PrintWriter out = new PrintWriter(new FileWriter(USER_FILE))) {
             for (User u : users) {
-                out.println(u.getUsername() + "," + u.getPassword() + "," + u.getName() + "," + u.getRole());
+                out.println(u.getUsername() + "," + u.getPassword() + "," + u.getName() + "," + u.getRole() + "," + u.getContactInfo());
             }
         } catch (IOException e) {
             System.out.println("Error updating users: " + e.getMessage());
@@ -254,7 +255,7 @@ public class Main {
 
     private static void loadUsersFromFile() {
         File file = new File(USER_FILE);
-        if (!file.exists()) return; // no users yet
+        if (!file.exists()) return;
 
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
@@ -264,15 +265,66 @@ public class Main {
                 String password = parts[1];
                 String name = parts[2];
                 String role = parts[3];
+                String contact = parts.length > 4 ? parts[4] : "";
 
                 User user;
-                if (role.equals("Buyer")) user = new Buyer(name, username, password, "", "");
-                else user = new Farmer(name, username, password, "", "");
+                if (role.equals("Buyer")) user = new Buyer(name, username, password, contact, "");
+                else user = new Farmer(name, username, password, contact, "");
 
                 users.add(user);
             }
         } catch (IOException e) {
             System.out.println("Error loading users: " + e.getMessage());
+        }
+    }
+
+    // ---------------- PRODUCT FILE HANDLING -----------------
+    private static void saveProductToFile(CoffeeBean bean) {
+        try (FileWriter fw = new FileWriter(PRODUCT_FILE, true);
+             BufferedWriter bw = new BufferedWriter(fw);
+             PrintWriter out = new PrintWriter(bw)) {
+            out.println(bean.getFarmerName() + "," + bean.getContactInfo() + "," +
+                        bean.getProductName() + "," + bean.getVariety() + "," +
+                        bean.getQuality() + "," + bean.getQuantity() + "," +
+                        bean.getPrice() + "," + bean.getAvailability());
+        } catch (IOException e) {
+            System.out.println("Error saving product: " + e.getMessage());
+        }
+    }
+
+    private static void loadProductsFromFile() {
+        File file = new File(PRODUCT_FILE);
+        if (!file.exists()) return;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split(",");
+                String farmerName = parts[0];
+                String contactInfo = parts[1];
+                String productName = parts[2];
+                String variety = parts[3];
+                String quality = parts[4];
+                int qty = Integer.parseInt(parts[5]);
+                double price = Double.parseDouble(parts[6]);
+                String availability = parts[7];
+
+                CoffeeBean bean = new CoffeeBean(farmerName, contactInfo, productName,
+                                                 variety, quality, qty, price, availability);
+                marketProducts.add(bean);
+
+                // Assign product to the correct Farmer
+                for (User u : users) {
+                    if (u instanceof Farmer farmer &&
+                        farmer.getName().equals(farmerName) &&
+                        farmer.getContactInfo().equals(contactInfo)) {
+                        farmer.addProduct(bean);
+                        break;
+                    }
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Error loading products: " + e.getMessage());
         }
     }
 }
