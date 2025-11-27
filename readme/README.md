@@ -69,6 +69,9 @@ The system's design is heavily reliant on the principles of OOP:
   b. The farmer's menu includes parsing of numbers (Integer.parseInt, Double.parseDouble), which are wrapped in controlled prompts to avoid crashes from invalid input.
   
   c. Conditional checks such as verifying username existence or incorrect login credentials ensure the program handles user errors gracefully.
+
+## 🗄️File Handling
+This system includes file handling to ensure that user registration data is saved and retained even after the program is closed. Whenever a new user registers, their information—such as username and password — is written to a text file. When the program starts, it reads the file to load previously registered users, allowing login and account management to function without losing data. File handling in this system provides data persistence, making the application more reliable and user-friendly.
   
 ---
 
@@ -166,13 +169,15 @@ Logged in as: Farmer
 3. Logout
 Choose: 1
 ```
-Displaying Farmer interface:
+Displaying Farmer interface and inputting info:
 ```
 --- Farmer Menu ---
 1. Add Coffee Product
 2. View My Products
 3. Logout
 Choose: 1
+Farmer Name: Jamaica Borromeo
+Contact Info: 12345678910
 Product name: Mr. Bean
 Type/Variety: Barako
 Quality: Whole beans         
@@ -180,7 +185,20 @@ Quantity (kg): 50
 Price per kg: 540
 Availability: Limited Stocks
 
-? Product added!
+Product added!
+```
+Viewing Products:
+```
+--- Your Products ---
+Farmer Name: Jamaica Borromeo
+Contact Info: 12345678910
+Product: BeanJam
+Type/Variety: Barako
+Quality: Roasted, Strong Aroma
+Quantity: 10 kg
+Price: 550.0 per kg
+Availability: Available
+--------------------------
 ```
 Logging out:
 ```
@@ -256,6 +274,8 @@ Choose: 1
 ```
 ```
 --- Coffee Products ---
+Farmer Name: Jamaica Borromeo
+Contact Info: 12345678910
 Product: Mr. Bean
 Type/Variety: Barako
 Quality: Whole beans
