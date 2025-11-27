@@ -20,4 +20,10 @@ public class Farmer extends User {
     public String getRole() {
         return "Farmer";
     }
+
+    // Optional getter if you want to access contact info directly
+    @Override
+    public String getContactInfo() {
+        return contactInfo;
+    }
 }
