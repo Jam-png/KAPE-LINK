@@ -1,15 +1,18 @@
 public class CoffeeBean {
-    private final String name;
-    private final String contactInfo;
+    private final String farmerName;     // Farmer's name
+    private final String contactInfo;    // Farmer's contact
     private final String productName;
     private final String variety;
-    private String quality = null;
+    private final String quality;
     private final int quantity;
     private final double price;
-    private String availability = null;
+    private final String availability;
 
-    public CoffeeBean(String name, String contactInfo, String productName, String variety, String quality, int quantity, double price, String availability) {
-        this.name = name;
+    // Constructor used when creating a new product
+    public CoffeeBean(String farmerName, String contactInfo, String productName,
+                      String variety, String quality, int quantity,
+                      double price, String availability) {
+        this.farmerName = farmerName;
         this.contactInfo = contactInfo;
         this.productName = productName;
         this.variety = variety;
@@ -19,8 +22,9 @@ public class CoffeeBean {
         this.availability = availability;
     }
 
+    // Display product info
     public void display() {
-        System.out.println("Farmer Name: " + name);
+        System.out.println("Farmer Name: " + farmerName);
         System.out.println("Contact Info: " + contactInfo);
         System.out.println("Product: " + productName);
         System.out.println("Type/Variety: " + variety);
@@ -30,4 +34,14 @@ public class CoffeeBean {
         System.out.println("Availability: " + availability);
         System.out.println("--------------------------");
     }
+
+    // Getters
+    public String getFarmerName() { return farmerName; }
+    public String getContactInfo() { return contactInfo; }
+    public String getProductName() { return productName; }
+    public String getVariety() { return variety; }
+    public String getQuality() { return quality; }
+    public int getQuantity() { return quantity; }
+    public double getPrice() { return price; }
+    public String getAvailability() { return availability; }
 }
