@@ -88,7 +88,7 @@ This is a standard Java console application.
        /  /  /
       _________
      |         |---
-     |   JAZ   |   |     K A P E ? L I N K
+     |   JAZ   |   |     K A P E  L I N K
      |_________|---
 
 «««000»»»ooo«««000»»»ooo«««000»»»ooo«««000»»»
@@ -118,7 +118,7 @@ Login of Farmer role:
        /  /  /
       _________
      |         |---
-     |   JAZ   |   |     K A P E ? L I N K
+     |   JAZ   |   |     K A P E  L I N K
      |_________|---
 
 «««000»»»ooo«««000»»»ooo«««000»»»ooo«««000»»»
@@ -170,7 +170,7 @@ Logging out...
        /  /  /
       _________
      |         |---
-     |   JAZ   |   |     K A P E ? L I N K
+     |   JAZ   |   |     K A P E  L I N K
      |_________|---
 
 «««000»»»ooo«««000»»»ooo«««000»»»ooo«««000»»»
@@ -200,7 +200,7 @@ Logging in as Buyer:
        /  /  /
       _________
      |         |---
-     |   JAZ   |   |     K A P E ? L I N K
+     |   JAZ   |   |     K A P E  L I N K
      |_________|---
 
 «««000»»»ooo«««000»»»ooo«««000»»»ooo«««000»»»
@@ -259,7 +259,7 @@ Logging out...
        /  /  /
       _________
      |         |---
-     |   JAZ   |   |     K A P E ? L I N K
+     |   JAZ   |   |     K A P E  L I N K
      |_________|---
 
 «««000»»»ooo«««000»»»ooo«««000»»»ooo«««000»»»
@@ -286,7 +286,7 @@ Are you sure you want to delete your account? (yes/no): yes
        /  /  /
       _________
      |         |---
-     |   JAZ   |   |     K A P E ? L I N K
+     |   JAZ   |   |     K A P E  L I N K
      |_________|---
 
 «««000»»»ooo«««000»»»ooo«««000»»»ooo«««000»»»
@@ -314,7 +314,7 @@ Are you sure you want to delete your account? (yes/no): yes
        /  /  /
       _________
      |         |---
-     |   JAZ   |   |     K A P E ? L I N K
+     |   JAZ   |   |     K A P E  L I N K
      |_________|---
 
 «««000»»»ooo«««000»»»ooo«««000»»»ooo«««000»»»
