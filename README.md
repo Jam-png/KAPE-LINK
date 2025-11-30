@@ -384,6 +384,7 @@ Developed as a comprehensive educational project demonstrating core OOP principl
 | <img src="images/Monterey.jpg" width="120"> | Monterey, John Zedrick D. | Team Member |
 | <img src="images/Villavicencio.jpg" width="120"> | Villavicencio, Aliceson O. | Team Member |
 
+<div style="page-break-before: always;"></div>
 <h2>Acknowledgement</h2>
 <p>
     We would like to express our sincere gratitude to our professor, <strong>Mr. Emmanuel Charlie Eneiquez</strong>, for the guidance, support, and encouragement 
