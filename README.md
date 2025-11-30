@@ -392,5 +392,3 @@ Developed as a comprehensive educational project demonstrating core OOP principl
 </p>
 
 <p align="center">Enjoy linking with local coffee! ☕✨</p>
-<br><br>
----
