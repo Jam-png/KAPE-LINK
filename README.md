@@ -385,6 +385,7 @@ Developed as a comprehensive educational project demonstrating core OOP principl
 | <img src="images/Villavicencio.jpg" width="120"> | Villavicencio, Aliceson O. | Team Member |
 
 <h2>Acknowledgement</h2>
+<br><br>
 <p>
     We would like to express our sincere gratitude to our professor, <strong>Mr. Emmanuel Charlie Eneiquez</strong>, for the guidance, support, and encouragement 
     provided throughout the development of this project. Your insights and feedback  greatly contributed to the improvement and completion of this work.
