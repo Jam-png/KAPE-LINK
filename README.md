@@ -387,7 +387,7 @@ Developed as a comprehensive educational project demonstrating core OOP principl
 <div style="page-break-before: always;"></div>
 <h2>Acknowledgement</h2>
 <p>
-    We would like to express our sincere gratitude to our professor, <strong>Mr. Emmanuel Charlie Eneiquez</strong>, for the guidance, support, and encouragement 
+    We would like to express our sincere gratitude to our professor, <strong>Mr. Emmanuel Charlie Enriquez</strong>, for the guidance, support, and encouragement 
     provided throughout the development of this project. Your insights and feedback  greatly contributed to the improvement and completion of this work.
 </p>
 
