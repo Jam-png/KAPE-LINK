@@ -9,7 +9,7 @@
 ## 📑 Description/Overview
 <a id="overview"></a>
 
-TThe KAPE LINK System, developed by JAZ Once (Join Agriculture Zest Once), is a Java-based command-line application designed to facilitate direct interaction between local coffee farmers and buyers. The system addresses issues of limited market access and unfair pricing by enabling user registration, product listing, and product browsing within a transparent digital environment. Guided by the principles of Kultura, Ani, Presyo, and Epektibo, it promotes fair trade, farmer empowerment, and efficient information exchange while intentionally excluding payment and logistics to maintain a focused, educational scope.
+The KAPE LINK System, developed by JAZ Once (Join Agriculture Zest Once), is a Java-based command-line application designed to facilitate direct interaction between local coffee farmers and buyers. The system addresses issues of limited market access and unfair pricing by enabling user registration, product listing, and product browsing within a transparent digital environment. Guided by the principles of Kultura, Ani, Presyo, and Epektibo, it promotes fair trade, farmer empowerment, and efficient information exchange while intentionally excluding payment and logistics to maintain a focused, educational scope.
 
 The project showcases core **Object-Oriented Programming (OOP)** principles using distinct user roles and product classes to manage inventory and user interactions.
 
